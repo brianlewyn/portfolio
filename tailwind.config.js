@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./public/index.html'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Comfortaa: 'Comfortaa',
+        Poppins: 'Poppins',
+      },
+    },
   },
   plugins: [],
 }

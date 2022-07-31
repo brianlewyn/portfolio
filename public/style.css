@@ -463,8 +463,6 @@ h1{
   width: 1.5rem;
 }
 
-/* .IconSection {} */
-
 /* Primary Molecules */
 
 .AtomActive{
@@ -496,25 +494,46 @@ h1{
 
 .LogoGroup{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.LogoGroup svg{
+.LogoGroup>a{
+  display: flex;
+  flex-grow: 1;
+}
+
+.LogoGroup>a svg{
+  height: 1.5rem;
+  width: 8.5rem;
+  fill: #090B10;
+  fill: #fff;
+}
+
+@media (min-width: 768px){
+  .LogoGroup>a{
+    display: none;
+  }
+}
+
+.LogoGroup>svg{
   height: 1.5rem;
   width: 1.5rem;
   cursor: pointer;
   fill: #fff;
 }
 
-.LogoGroup svg:hover{
+.LogoGroup>svg:hover{
   fill: #A7F1E1;
 }
 
-.LogoGroup a svg{
-  height: 1.5rem;
-  width: 8.5rem;
-  fill: #090B10;
-  fill: #fff;
+.LogoGroup>svg{
+  display: none;
+}
+
+@media (min-width: 768px){
+  .LogoGroup>svg{
+    display: flex;
+  }
 }
 
 .BtnGroup{
@@ -525,7 +544,7 @@ h1{
 
 .BtnGroup button{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   -moz-column-gap: 0.625rem;
        column-gap: 0.625rem;
   border-radius: 0.25rem;
@@ -549,35 +568,82 @@ h1{
   color: rgb(167 241 225 / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px){
+  .BtnGroup button{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
 .BtnGroup button svg{
   height: 1.5rem;
   width: 1.5rem;
 }
 
+.BtnGroup button div{
+  display: flex;
+  flex-grow: 1;
+}
+
+@media (min-width: 768px){
+  .BtnGroup button div{
+    display: none;
+  }
+}
+
 .AdminGroup{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.625rem;
 }
 
-.AdminGroup>div {
+.AdminGroup>div{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   font-family: Comfortaa;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.AdminGroup>div div:nth-child(odd){
+.AdminGroup>div div:first-child{
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-.AdminGroup>div div:nth-child(even){
+.AdminGroup>div div:last-child{
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
+@media (min-width: 768px){
+  .AdminGroup>div{
+    display: none;
+  }
+}
+
 /* Components */
+
+.\!Loading{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 11 16 / var(--tw-bg-opacity));
+}
+
+.\!Loading svg{
+  height: 15rem;
+  width: 11rem;
+  fill: #A7F1E1;
+}
 
 .Loading{
   position: fixed;
@@ -599,6 +665,36 @@ h1{
   fill: #A7F1E1;
 }
 
+.\!SideBar{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: flex;
+  height: 100vh;
+  width: 16rem;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1.25rem;
+  overflow-x: hidden;
+  background-color: rgb(9 11 16 / .60);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-backdrop-blur: blur(8px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+@media (min-width: 768px){
+  .\!SideBar{
+    width: 3.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
 .SideBar{
   position: fixed;
   top: 0px;
@@ -612,10 +708,64 @@ h1{
   row-gap: 1.25rem;
   overflow-x: hidden;
   background-color: rgb(9 11 16 / .60);
-  padding: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   --tw-backdrop-blur: blur(8px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+@media (min-width: 768px){
+  .SideBar{
+    width: 3.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.\!TopBar{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 90;
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+@media (min-width: 768px){
+  .\!TopBar{
+    display: none;
+  }
+}
+
+.\!TopBar svg{
+  height: 1.5rem;
+  width: 8.5rem;
+  fill: #090B10;
+}
+
+.\!TopBar button{
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 11 16 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.25rem;
+  font-family: Comfortaa;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(167 241 225 / var(--tw-text-opacity));
 }
 
 .TopBar{
@@ -661,6 +811,26 @@ h1{
   color: rgb(167 241 225 / var(--tw-text-opacity));
 }
 
+.\!MainSection{
+  position: static;
+  top: 0px;
+  left: 3.5rem;
+  z-index: 0;
+  height: calc(100% - 6rem);
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.75rem;
+}
+
+@media (min-width: 768px){
+  .\!MainSection{
+    position: relative;
+    height: 100%;
+    width: calc(100% - 3.5rem);
+  }
+}
+
 .MainSection{
   position: static;
   top: 0px;
@@ -679,6 +849,49 @@ h1{
     height: 100%;
     width: calc(100% - 3.5rem);
   }
+}
+
+.\!BottomBar{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 90;
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+@media (min-width: 768px){
+  .\!BottomBar{
+    display: none;
+  }
+}
+
+.\!BottomBar svg{
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  fill: #fff;
+}
+
+.\!BottomBar svg:hover{
+  fill: #A7F1E1;
+}
+
+.\!BottomBar span{
+  display: flex;
+  flex-grow: 1;
+  font-family: Comfortaa;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .BottomBar{

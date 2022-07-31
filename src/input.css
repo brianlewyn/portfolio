@@ -37,7 +37,6 @@
       @apply
       w-6 h-6
    }
-   /* .IconSection {} */
    .BtnTour {
       @apply
       pt-1.5 px-4 pb-1
@@ -50,11 +49,11 @@
       font-normal font-Comfortaa
       text-white
    }
-   .AdminDetails {}
 
    /* Primary Molecules */
    .LogoLink {
       @apply
+      flex grow
       [&_svg]:Logo [&_svg]:fill-white
    }
    .IconLink {
@@ -70,17 +69,19 @@
    }
    .BtnSection {
       @apply
-      flex justify-start gap-x-2.5
-      px-4 py-2
+      flex justify-center gap-x-2.5
+      px-4 md:px-2 py-2
       font-normal text-lg font-Comfortaa
       text-white hover:text-Teal hover:bg-Teal/[.20] rounded
       fill-white hover:fill-Teal
       [&_svg]:Icon
+      [&_div]:flex md:[&_div]:hidden [&_div]:grow
    }
    .AdminDetails {
       @apply
+      flex flex-col grow
       font-medium font-Comfortaa text-white
-      odd:[&_div]:text-lg even:[&_div]:text-sm
+      first:[&_div]:text-lg last:[&_div]:text-sm
    }
    .AtomActive {
       @apply
@@ -94,9 +95,11 @@
    /* Secondary Molecules */
    .LogoGroup {
       @apply
-      flex justify-between
-      [&_a]:LogoLink
-      [&_svg]:IconAction
+      flex justify-center
+      [&>a]:LogoLink
+      md:[&>a]:hidden
+      [&>svg]:IconAction
+      [&>svg]:hidden md:[&>svg]:flex
    }
    .BtnGroup {
       @apply
@@ -105,8 +108,9 @@
    }
    .AdminGroup {
       @apply
-      flex justify-start gap-2.5
+      flex justify-center gap-2.5
       [&>div]:AdminDetails
+      md:[&>div]:hidden
    }
 
    /* Components */
@@ -122,7 +126,7 @@
       @apply
       fixed top-0 left-0 z-100
       flex flex-col justify-between gap-y-5 overflow-x-hidden
-      w-64 h-screen p-3
+      w-64 md:w-14 h-screen px-3 md:px-2 py-3
       bg-Dark/[.60]
       backdrop-blur
    }

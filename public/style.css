@@ -444,8 +444,6 @@ body{
 
 /* .IconLink {} */
 
-/* .IconAction {} */
-
 /* .IconSection {} */
 
 /* .BtnLink {} */
@@ -546,6 +544,80 @@ body{
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(167 241 225 / var(--tw-text-opacity));
+}
+
+.\!BottomBar{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 90;
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+.\!BottomBar svg{
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  fill: #fff;
+}
+
+.\!BottomBar svg:hover{
+  fill: #A7F1E1;
+}
+
+.\!BottomBar span{
+  display: flex;
+  flex-grow: 1;
+  font-family: Comfortaa;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.BottomBar{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 90;
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+.BottomBar svg{
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  fill: #fff;
+}
+
+.BottomBar svg:hover{
+  fill: #A7F1E1;
+}
+
+.BottomBar span{
+  display: flex;
+  flex-grow: 1;
+  font-family: Comfortaa;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 *, ::before, ::after{

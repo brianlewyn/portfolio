@@ -639,12 +639,6 @@ h1{
   background-color: rgb(9 11 16 / var(--tw-bg-opacity));
 }
 
-.\!Loading svg{
-  height: 15rem;
-  width: 11rem;
-  fill: #A7F1E1;
-}
-
 .Loading{
   position: fixed;
   top: 0px;
@@ -659,17 +653,11 @@ h1{
   background-color: rgb(9 11 16 / var(--tw-bg-opacity));
 }
 
-.Loading svg{
-  height: 15rem;
-  width: 11rem;
-  fill: #A7F1E1;
-}
-
 .\!SideBar{
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 100;
+  z-index: 90;
   display: flex;
   height: 100vh;
   width: 16rem;
@@ -699,7 +687,7 @@ h1{
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 100;
+  z-index: 90;
   display: flex;
   height: 100vh;
   width: 16rem;
@@ -729,7 +717,7 @@ h1{
   position: relative;
   top: 0px;
   left: 0px;
-  z-index: 90;
+  z-index: 80;
   display: flex;
   height: 3rem;
   width: 100%;
@@ -772,7 +760,7 @@ h1{
   position: relative;
   top: 0px;
   left: 0px;
-  z-index: 90;
+  z-index: 80;
   display: flex;
   height: 3rem;
   width: 100%;
@@ -855,7 +843,7 @@ h1{
   position: fixed;
   bottom: 0px;
   left: 0px;
-  z-index: 90;
+  z-index: 80;
   display: flex;
   height: 3rem;
   width: 100%;
@@ -898,7 +886,7 @@ h1{
   position: fixed;
   bottom: 0px;
   left: 0px;
-  z-index: 90;
+  z-index: 80;
   display: flex;
   height: 3rem;
   width: 100%;

@@ -484,43 +484,6 @@ h1{
   fill: #A7F1E1;
 }
 
-.\!TopBar{
-  position: relative;
-  top: 0px;
-  left: 0px;
-  z-index: 90;
-  display: flex;
-  height: 3rem;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-}
-
-.\!TopBar svg{
-  height: 1.5rem;
-  width: 8.5rem;
-  fill: #090B10;
-}
-
-.\!TopBar button{
-  border-radius: 0.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(9 11 16 / var(--tw-bg-opacity));
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.375rem;
-  padding-bottom: 0.25rem;
-  font-family: Comfortaa;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-  --tw-text-opacity: 1;
-  color: rgb(167 241 225 / var(--tw-text-opacity));
-}
-
 .TopBar{
   position: relative;
   top: 0px;
@@ -534,6 +497,12 @@ h1{
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
+}
+
+@media (min-width: 768px){
+  .TopBar{
+    display: none;
+  }
 }
 
 .TopBar svg{
@@ -558,43 +527,6 @@ h1{
   color: rgb(167 241 225 / var(--tw-text-opacity));
 }
 
-.\!BottomBar{
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  z-index: 90;
-  display: flex;
-  height: 3rem;
-  width: 100%;
-  align-items: flex-start;
-  justify-content: flex-start;
-  -moz-column-gap: 0.625rem;
-       column-gap: 0.625rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-}
-
-.\!BottomBar svg{
-  height: 1.5rem;
-  width: 1.5rem;
-  cursor: pointer;
-  fill: #fff;
-}
-
-.\!BottomBar svg:hover{
-  fill: #A7F1E1;
-}
-
-.\!BottomBar span{
-  display: flex;
-  flex-grow: 1;
-  font-family: Comfortaa;
-  font-weight: 400;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .BottomBar{
   position: fixed;
   bottom: 0px;
@@ -610,6 +542,12 @@ h1{
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
+}
+
+@media (min-width: 768px){
+  .BottomBar{
+    display: none;
+  }
 }
 
 .BottomBar svg{

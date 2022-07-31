@@ -34,7 +34,11 @@
       fill-Dark
    }
    /* .LogoWhite {} */
-   /* .IconLink {} */
+   .IconLink {
+      @apply
+      w-6 h-6
+      fill-Dark/[.60] hover:fill-Dark
+   }
    .IconAction {
       @apply
       w-6 h-6
@@ -84,23 +88,41 @@
    }
    .MainSection {
       @apply
-      z-0
+      static md:relative top-0 left-14 z-0
       overflow-x-hidden overflow-y-auto
       w-full h-[calc(100%_-_6rem)] p-7
+      md:w-[calc(100%_-_3.5rem)] md:h-full
    }
 
    /* Templates */
    #Home {
       @apply
-      flex flex-col justify-evenly items-center
+      flex flex-col md:flex-row justify-evenly items-center
    }
 
    /* #Template article */
    #Home article {
       @apply
-      flex flex-col items-center gap-y-2.5
+      flex flex-col items-center md:items-start gap-y-2.5 md:gap-y-5
       max-w-lg
-      [&_p]:text-center
+   }
+   #Home article p {
+      @apply
+      text-center md:text-left
+   }
+   #Home article div {
+      @apply
+      hidden md:flex gap-x-12
+      [&_svg]:IconLink
+   }
+   #Home article button {
+      @apply
+      hidden md:block
+      BtnTour
+   }
+   #Home img {
+      @apply
+      md:pl-5
    }
 }
 

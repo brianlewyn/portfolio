@@ -44,13 +44,13 @@
       font-normal text-sm font-Comfortaa
       text-Teal bg-Dark rounded
    }
-   /* .BtnSection {} */
    .TitleCurrentSection {
       @apply
       flex grow
       font-normal font-Comfortaa
       text-white
    }
+   .AdminDetails {}
 
    /* Primary Molecules */
    .LogoLink {
@@ -68,6 +68,20 @@
       fill-white hover:fill-Teal
       cursor-pointer
    }
+   .BtnSection {
+      @apply
+      flex justify-start gap-x-2.5
+      px-4 py-2
+      font-normal text-lg font-Comfortaa
+      text-white hover:text-Teal hover:bg-Teal/[.20] rounded
+      fill-white hover:fill-Teal
+      [&_svg]:Icon
+   }
+   .AdminDetails {
+      @apply
+      font-medium font-Comfortaa text-white
+      odd:[&_div]:text-lg even:[&_div]:text-sm
+   }
    .AtomActive {
       @apply
       absolute left-4 bottom-12
@@ -83,6 +97,16 @@
       flex justify-between
       [&_a]:LogoLink
       [&_svg]:IconAction
+   }
+   .BtnGroup {
+      @apply
+      flex flex-col gap-y-5
+      [&_button]:BtnSection
+   }
+   .AdminGroup {
+      @apply
+      flex justify-start gap-2.5
+      [&>div]:AdminDetails
    }
 
    /* Components */

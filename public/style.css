@@ -465,8 +465,6 @@ h1{
 
 /* .IconSection {} */
 
-/* .BtnSection {} */
-
 /* Primary Molecules */
 
 .AtomActive{
@@ -495,6 +493,89 @@ h1{
 }
 
 /* Secondary Molecules */
+
+.LogoGroup{
+  display: flex;
+  justify-content: space-between;
+}
+
+.LogoGroup svg{
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  fill: #fff;
+}
+
+.LogoGroup svg:hover{
+  fill: #A7F1E1;
+}
+
+.LogoGroup a svg{
+  height: 1.5rem;
+  width: 8.5rem;
+  fill: #090B10;
+  fill: #fff;
+}
+
+.BtnGroup{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+
+.BtnGroup button{
+  display: flex;
+  justify-content: flex-start;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  border-radius: 0.25rem;
+  fill: #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: Comfortaa;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.BtnGroup button:hover{
+  background-color: rgb(167 241 225 / .20);
+  fill: #A7F1E1;
+  --tw-text-opacity: 1;
+  color: rgb(167 241 225 / var(--tw-text-opacity));
+}
+
+.BtnGroup button svg{
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.AdminGroup{
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.625rem;
+}
+
+.AdminGroup>div {
+  font-family: Comfortaa;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.AdminGroup>div div:nth-child(odd){
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.AdminGroup>div div:nth-child(even){
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 
 /* Components */
 

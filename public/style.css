@@ -452,13 +452,22 @@ h1{
 
 /* Atoms */
 
-/* .LogoWhite {} */
+.Logo{
+  height: 1.5rem;
+  width: 8.5rem;
+  fill: #090B10;
+}
+
+.Icon{
+  height: 1.5rem;
+  width: 1.5rem;
+}
 
 /* .IconSection {} */
 
-/* .BtnLink {} */
-
 /* .BtnSection {} */
+
+/* Primary Molecules */
 
 .AtomActive{
   position: absolute;
@@ -485,9 +494,11 @@ h1{
   fill: #090B10;
 }
 
-/* Molecules */
+/* Secondary Molecules */
 
-.LoadingWindow{
+/* Components */
+
+.Loading{
   position: fixed;
   top: 0px;
   left: 0px;
@@ -501,10 +512,29 @@ h1{
   background-color: rgb(9 11 16 / var(--tw-bg-opacity));
 }
 
-.LoadingWindow svg{
+.Loading svg{
   height: 15rem;
   width: 11rem;
   fill: #A7F1E1;
+}
+
+.SideBar{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: flex;
+  height: 100vh;
+  width: 16rem;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1.25rem;
+  overflow-x: hidden;
+  background-color: rgb(9 11 16 / .60);
+  padding: 0.75rem;
+  --tw-backdrop-blur: blur(8px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .TopBar{
@@ -550,6 +580,26 @@ h1{
   color: rgb(167 241 225 / var(--tw-text-opacity));
 }
 
+.MainSection{
+  position: static;
+  top: 0px;
+  left: 3.5rem;
+  z-index: 0;
+  height: calc(100% - 6rem);
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.75rem;
+}
+
+@media (min-width: 768px){
+  .MainSection{
+    position: relative;
+    height: 100%;
+    width: calc(100% - 3.5rem);
+  }
+}
+
 .BottomBar{
   position: fixed;
   bottom: 0px;
@@ -593,27 +643,7 @@ h1{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.MainSection{
-  position: static;
-  top: 0px;
-  left: 3.5rem;
-  z-index: 0;
-  height: calc(100% - 6rem);
-  width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 1.75rem;
-}
-
-@media (min-width: 768px){
-  .MainSection{
-    position: relative;
-    height: 100%;
-    width: calc(100% - 3.5rem);
-  }
-}
-
-/* Templates */
+/* Sections Templates */
 
 #Home{
   display: flex;
@@ -626,9 +656,11 @@ h1{
   #Home{
     flex-direction: row;
   }
-}
 
-/* #Template article */
+  #Home img{
+    padding-left: 1.25rem;
+  }
+}
 
 #Home article{
   display: flex;
@@ -645,35 +677,13 @@ h1{
   }
 }
 
-#Home article p{
-  text-align: center;
-}
-
-@media (min-width: 768px){
-  #Home article p{
-    text-align: left;
-  }
-}
-
-#Home article div{
-  display: none;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
-}
-
-@media (min-width: 768px){
-  #Home article div{
-    display: flex;
-  }
-}
-
-#Home article div svg{
+#Home article svg{
   height: 1.5rem;
   width: 1.5rem;
   fill: rgb(9 11 16 / .60);
 }
 
-#Home article div svg:hover{
+#Home article svg:hover{
   fill: #090B10;
 }
 
@@ -698,9 +708,27 @@ h1{
   #Home article button{
     display: block;
   }
+}
 
-  #Home img{
-    padding-left: 1.25rem;
+#Home article p{
+  text-align: center;
+}
+
+@media (min-width: 768px){
+  #Home article p{
+    text-align: left;
+  }
+}
+
+#Home article div{
+  display: none;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
+
+@media (min-width: 768px){
+  #Home article div{
+    display: flex;
   }
 }
 

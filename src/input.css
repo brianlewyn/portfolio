@@ -23,27 +23,19 @@
    }
 
    /* Atoms */
-   .LogoLoad {
+   .Loader {
       @apply
       w-44 h-60
       fill-Teal
    }
-   .LogoDark {
+   .Logo {
       @apply
       w-[8.5rem] h-6
       fill-Dark
    }
-   /* .LogoWhite {} */
-   .IconLink {
+   .Icon {
       @apply
       w-6 h-6
-      fill-Dark/[.60] hover:fill-Dark
-   }
-   .IconAction {
-      @apply
-      w-6 h-6
-      fill-white hover:fill-Teal
-      cursor-pointer
    }
    /* .IconSection {} */
    .BtnTour {
@@ -52,13 +44,29 @@
       font-normal text-sm font-Comfortaa
       text-Teal bg-Dark rounded
    }
-   /* .BtnLink {} */
    /* .BtnSection {} */
    .TitleCurrentSection {
       @apply
       flex grow
       font-normal font-Comfortaa
       text-white
+   }
+
+   /* Primary Molecules */
+   .LogoLink {
+      @apply
+      [&_svg]:Logo [&_svg]:fill-white
+   }
+   .IconLink {
+      @apply
+      Icon
+      fill-Dark/[.60] hover:fill-Dark
+   }
+   .IconAction {
+      @apply
+      Icon
+      fill-white hover:fill-Teal
+      cursor-pointer
    }
    .AtomActive {
       @apply
@@ -69,22 +77,45 @@
       [&_svg]:IconLink
    }
 
-   /* Molecules */
-   .LoadingWindow {
+   /* Secondary Molecules */
+   .LogoGroup {
+      @apply
+      flex justify-between
+      [&_a]:LogoLink
+      [&_svg]:IconAction
+   }
+
+   /* Components */
+   .Loading {
       @apply
       fixed top-0 left-0 z-100
       hidden justify-center items-center
       w-screen h-screen
       bg-Dark
-      [&_svg]:LogoLoad
+      [&_svg]:Loader
+   }
+   .SideBar {
+      @apply
+      fixed top-0 left-0 z-100
+      flex flex-col justify-between gap-y-5 overflow-x-hidden
+      w-64 h-screen p-3
+      bg-Dark/[.60]
+      backdrop-blur
    }
    .TopBar {
       @apply
       relative top-0 left-0 z-90
       flex md:hidden justify-between items-center
       h-12 w-full px-4 pt-2
-      [&_svg]:LogoDark
+      [&_svg]:Logo [&_svg]:fill-Dark
       [&_button]:BtnTour
+   }
+   .MainSection {
+      @apply
+      static md:relative top-0 left-14 z-0
+      overflow-x-hidden overflow-y-auto
+      w-full h-[calc(100%_-_6rem)] p-7
+      md:w-[calc(100%_-_3.5rem)] md:h-full
    }
    .BottomBar {
       @apply
@@ -94,43 +125,22 @@
       [&_svg]:IconAction
       [&_span]:TitleCurrentSection
    }
-   .MainSection {
-      @apply
-      static md:relative top-0 left-14 z-0
-      overflow-x-hidden overflow-y-auto
-      w-full h-[calc(100%_-_6rem)] p-7
-      md:w-[calc(100%_-_3.5rem)] md:h-full
-   }
 
-   /* Templates */
+   /* Sections Templates */
    #Home {
       @apply
       flex flex-col md:flex-row justify-evenly items-center
+      md:[&_img]:pl-5
    }
-
-   /* #Template article */
    #Home article {
       @apply
       flex flex-col items-center md:items-start gap-y-2.5 md:gap-y-5
       max-w-lg
-   }
-   #Home article p {
-      @apply
-      text-center md:text-left
-   }
-   #Home article div {
-      @apply
-      hidden md:flex gap-x-12
+      [&_p]:text-center md:[&_p]:text-left
+      [&_div]:hidden md:[&_div]:flex [&_div]:gap-x-12
       [&_svg]:IconLink
-   }
-   #Home article button {
-      @apply
-      hidden md:block
-      BtnTour
-   }
-   #Home img {
-      @apply
-      md:pl-5
+      [&_button]:hidden md:[&_button]:block
+      [&_button]:BtnTour
    }
 }
 

@@ -20,6 +20,23 @@
       w-44 h-60
       fill-Teal
    }
+   .LogoDark {
+      @apply
+      w-[8.5rem] h-6
+      fill-Dark
+   }
+   /* .LogoWhite {} */
+   /* .IconLink {} */
+   /* .IconAction {} */
+   /* .IconSection {} */
+   .BtnTour {
+      @apply
+      pt-1.5 px-4 pb-1
+      font-normal text-sm font-Comfortaa
+      text-Teal bg-Dark rounded
+   }
+   /* .BtnLink {} */
+   /* .BtnSection {} */
 
    /* Molecules */
    .LoadingWindow {
@@ -30,6 +47,15 @@
       bg-Dark
       [&_svg]:LogoLoad
    }
+   .TopBar {
+      @apply
+      relative top-0 left-0 z-90
+      flex justify-between items-center
+      h-12 w-full px-4 pt-2
+      [&_svg]:LogoDark
+      [&_button]:BtnTour
+   }
+   /* .BottomBar{} */
 }
 
 /* @tailwind components; */

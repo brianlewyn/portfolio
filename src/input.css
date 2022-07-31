@@ -13,6 +13,14 @@
       font-light text-lg font-Poppins
       bg-gradient-to-b from-Teal to-Dark
    }
+   section {
+      @apply
+      w-full h-full
+   }
+   h1 {
+      @apply
+      font-medium text-3xl font-Comfortaa
+   }
 
    /* Atoms */
    .LogoLoad {
@@ -69,10 +77,30 @@
    .BottomBar {
       @apply
       fixed bottom-0 left-0 z-90
-      flex justify-start items-center gap-x-2.5
+      flex justify-start items-start gap-x-2.5
       w-full h-12 px-4 pt-2
       [&_svg]:IconAction
       [&_span]:TitleCurrentSection
+   }
+   .MainSection {
+      @apply
+      z-0
+      overflow-x-hidden overflow-y-auto
+      w-full h-[calc(100%_-_6rem)] p-7
+   }
+
+   /* Templates */
+   #Home {
+      @apply
+      flex flex-col justify-evenly items-center
+   }
+
+   /* #Template article */
+   #Home article {
+      @apply
+      flex flex-col items-center gap-y-2.5
+      max-w-lg
+      [&_p]:text-center
    }
 }
 

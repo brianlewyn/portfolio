@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 /*
 ! tailwindcss v3.1.7 | MIT License | https://tailwindcss.com
 */
@@ -417,7 +421,48 @@ video {
   height: auto;
 }
 
-*, ::before, ::after {
+/* HTML */
+
+body{
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: #A7F1E1;
+  --tw-gradient-to: rgb(167 241 225 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #090B10;
+  font-family: Poppins;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 300;
+}
+
+/* Atoms */
+
+/* Molecules */
+
+.LoadingWindow{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 11 16 / var(--tw-bg-opacity));
+}
+
+.LoadingWindow svg{
+  height: 15rem;
+  width: 11rem;
+  fill: #A7F1E1;
+}
+
+*, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -464,7 +509,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-::-webkit-backdrop {
+::-webkit-backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -511,7 +556,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-::backdrop {
+::backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -561,3 +606,7 @@ video {
 /* @tailwind components; */
 
 /* @tailwind utilities; */
+
+/* Update style.css:
+npx tailwindcss -c ./tailwind.config.js -i ./src/input.css -o ./public/style.css 
+*/

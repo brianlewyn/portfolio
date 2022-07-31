@@ -2,5 +2,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 @tailwind base;
+
+@layer base {
+
+   /* HTML */
+   body {
+      @apply
+      overflow-x-hidden
+      w-screen h-screen
+      font-light text-lg font-Poppins
+      bg-gradient-to-b from-Teal to-Dark
+   }
+
+   /* Atoms */
+   .LogoLoad {
+      @apply
+      w-44 h-60
+      fill-Teal
+   }
+
+   /* Molecules */
+   .LoadingWindow {
+      @apply
+      fixed top-0 left-0 z-100
+      hidden justify-center items-center
+      w-screen h-screen
+      bg-Dark
+      [&_svg]:LogoLoad
+   }
+}
+
 /* @tailwind components; */
 /* @tailwind utilities; */
+
+/* Update style.css:
+npx tailwindcss -c ./tailwind.config.js -i ./src/input.css -o ./public/style.css 
+*/

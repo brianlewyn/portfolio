@@ -37,6 +37,7 @@
       pt-1.5 px-4 pb-1
       font-normal text-sm font-Comfortaa
       text-Teal bg-Dark rounded
+      hover:scale-105
    }
    .TitleCurrentSection {
       @apply
@@ -54,6 +55,7 @@
    .IconLink {
       @apply
       Icon
+      hover:scale-110
       fill-Dark/[.60] hover:fill-Dark
    }
    .IconAction {
@@ -119,7 +121,7 @@
    .SideBar {
       @apply
       fixed top-0 left-0 z-90
-      flex flex-col justify-between gap-y-5 overflow-x-hidden
+      hidden md:flex flex-col justify-between gap-y-5 overflow-x-hidden
       w-64 md:w-14 h-screen px-3 md:px-2 py-3
       bg-Dark/[.60]
       backdrop-blur
@@ -152,7 +154,7 @@
    #Home {
       @apply
       flex flex-col md:flex-row justify-evenly items-center
-      md:[&_img]:pl-5
+      md:[&_img]:ml-5 lg:[&_img]:ml-0 lg:[&_img]:mr-10
    }
    #Home article {
       @apply

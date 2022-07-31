@@ -460,6 +460,31 @@ h1{
 
 /* .BtnSection {} */
 
+.AtomActive{
+  position: absolute;
+  left: 1rem;
+  bottom: 3rem;
+  display: none;
+  height: 3rem;
+  width: 18rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.375rem;
+  background-color: rgb(9 11 16 / .60);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.AtomActive svg{
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: rgb(9 11 16 / .60);
+}
+
+.AtomActive svg:hover{
+  fill: #090B10;
+}
+
 /* Molecules */
 
 .LoadingWindow{

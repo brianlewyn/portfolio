@@ -60,6 +60,14 @@
       font-normal font-Comfortaa
       text-white
    }
+   .AtomActive {
+      @apply
+      absolute left-4 bottom-12
+      hidden justify-between items-center
+      w-72 h-12 px-4
+      bg-Dark/[.60] rounded-md
+      [&_svg]:IconLink
+   }
 
    /* Molecules */
    .LoadingWindow {

@@ -8,9 +8,12 @@ module.exports = {
         Poppins: 'Poppins',
       },
       colors: {
-        'Red': '#FF0051',
-        'Teal': '#A7F1E1',
-        'Dark': '#090B10',
+        'Red': 'rgb(var(--Red) / 1)',
+        'Teal': 'rgb(var(--Teal) / 1)',
+        'Dark': 'rgb(var(--Dark) / 1)',
+        'TealGlass': 'rgb(var(--Teal) / .20)',
+        'DarkGlass': 'rgb(var(--Dark) / .60)',
+        'WhiteGlass': 'rgb(var(--White) / .65)',
       },
       zIndex: {
         '80': '80',

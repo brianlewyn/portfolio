@@ -5,6 +5,14 @@
 
 @layer base {
 
+   :root{
+      --Red: 255 0 81; 
+      --Dark: 9 11 16;
+      --Teal: 167 241 225;
+      --White: 225 225 225;
+   }
+
+
    /* HTML */
    body {
       @apply
@@ -22,102 +30,114 @@
       font-medium text-3xl font-Comfortaa
    }
 
+
    /* CSS !important */
    .Flex {
       @apply flex !important 
    }
 
+
    /* Atoms */
-   .Logo {
+   .IconLink {
+      @apply
+      w-6 h-6
+      hover:scale-110
+      fill-WhiteGlass hover:fill-white
+      md:fill-DarkGlass md:hover:fill-Dark
+   }
+   .LogoDark {
       @apply
       w-[8.5rem] h-6
       fill-Dark
    }
-   .Icon {
+   .LogoLight {
       @apply
-      w-6 h-6
+      w-[8.5rem] h-6
+      fill-WhiteGlass hover:fill-Teal
    }
    .BtnTour {
       @apply
       pt-1.5 px-4 pb-1
       font-normal text-sm font-Comfortaa
       text-Teal bg-Dark rounded
-      hover:scale-105
+   }
+   .BtnIcon {
+      @apply
+      w-6 h-6
+      fill-WhiteGlass hover:fill-Teal
+      cursor-pointer
+   }
+   .BtnMenu {
+      @apply
+      BtnIcon
+      hidden md:flex
+   }
+   .BUTTON {
+      @apply
+      text-Teal
+      fill-Teal
+      !important
    }
    .TitleCurrentSection {
       @apply
       flex grow
       font-normal font-Comfortaa
-      text-white
+      text-WhiteGlass
    }
 
-   /* Primary Molecules */
+
+   /* Molecules */
    .LogoLink {
       @apply
-      flex grow
-      [&_svg]:Logo [&_svg]:fill-white
-   }
-   .IconLink {
-      @apply
-      Icon
-      hover:scale-110
-      fill-Dark/[.60] hover:fill-Dark
-   }
-   .IconAction {
-      @apply
-      Icon
-      fill-white hover:fill-Teal
-      cursor-pointer
-   }
-   .BtnSection {
-      @apply
-      flex justify-center gap-x-2.5
-      px-4 md:px-2 py-2
-      font-normal text-lg font-Comfortaa
-      text-white hover:text-Teal hover:bg-Teal/[.20] rounded
-      fill-white hover:fill-Teal
-      [&_svg]:Icon
-      [&_div]:flex md:[&_div]:hidden [&_div]:grow
-   }
-   .AdminDetails {
-      @apply
-      flex flex-col grow
-      font-medium font-Comfortaa text-white
-      first:[&_div]:text-lg last:[&_div]:text-sm
-   }
-   
-   /* Secondary Molecules */
-   .LogoGroup {
-      @apply
-      flex justify-center
-      [&>a]:LogoLink
-      md:[&>a]:hidden
-      [&>svg]:IconAction
-      [&>svg]:hidden md:[&>svg]:flex
-   }
-   .BtnGroup {
-      @apply
-      flex flex-col gap-y-5
-      [&_button]:BtnSection
-   }
-   .AdminGroup {
-      @apply
-      flex justify-center gap-2.5
-      [&>div]:AdminDetails
-      md:[&>div]:hidden
+      flex md:hidden grow
+      [&_svg]:LogoLight
    }
    .RowLinks {
       @apply
       absolute left-4 bottom-12
       hidden justify-between items-center
       w-72 h-12 px-4
-      bg-Dark/[.60] rounded-md
+      bg-DarkGlass rounded-md
       [&_svg]:IconLink
-      [&_svg]:fill-white/[.60] hover:[&_svg]:fill-white
+   }
+   .AdminDetails {
+      @apply
+      flex md:hidden flex-col grow
+      font-medium font-Comfortaa text-WhiteGlass
+      first:[&_div]:text-lg last:[&_div]:text-sm
+   }
+   .BtnSection {
+      @apply
+      flex justify-center gap-x-2.5
+      px-4 md:px-2 py-2
+      font-normal text-lg font-Comfortaa
+      text-WhiteGlass hover:text-Teal hover:bg-TealGlass rounded
+      fill-WhiteGlass hover:fill-Teal
+      [&_svg]:w-6 [&_svg]:h-6
+      [&_div]:flex md:[&_div]:hidden [&_div]:grow
    }
 
 
    /* Components */
+   .LogoGroup {
+      @apply
+      flex justify-center
+      [&_a]:LogoLink
+      [&>svg]:BtnMenu
+   }
+   .AdminGroup {
+      @apply
+      flex justify-center gap-2.5
+      [&>div]:AdminDetails
+   }
+   .BtnGroup {
+      @apply
+      flex flex-col gap-y-5
+      [&_button]:BtnSection
+   }
+
+
+   /* Structure */
    .Loading {
       @apply
       fixed top-0 left-0 z-100
@@ -129,8 +149,8 @@
       @apply
       fixed top-0 left-0 z-90
       hidden md:flex flex-col justify-between gap-y-5 overflow-x-hidden
-      w-64 md:w-14 h-screen px-3 md:px-2 py-3
-      bg-Dark/[.60]
+      w-72 md:w-14 min-h-full px-3 md:px-2 py-3
+      bg-DarkGlass
       backdrop-blur
    }
    .TopBar {
@@ -138,10 +158,10 @@
       relative top-0 left-0 z-80
       flex md:hidden justify-between items-center
       h-12 w-full px-4 pt-2
-      [&_svg]:Logo [&_svg]:fill-Dark
+      [&_svg]:LogoDark
       [&_button]:BtnTour
    }
-   .MainSection {
+   .MainFrame {
       @apply
       static md:relative top-0 left-14 z-0
       overflow-x-hidden overflow-y-auto
@@ -153,25 +173,39 @@
       fixed bottom-0 left-0 z-80
       flex md:hidden justify-start items-start gap-x-2.5
       w-full h-12 px-4 pt-2
-      [&>svg]:IconAction
-      [&_span]:TitleCurrentSection
+      [&>svg]:BtnIcon
+      [&>span]:TitleCurrentSection
    }
+
 
    /* Sections Templates */
    #Home {
       @apply
       flex flex-col md:flex-row justify-evenly items-center
-      md:[&_img]:ml-5 lg:[&_img]:ml-0 lg:[&_img]:mr-10
    }
    #Home article {
       @apply
       flex flex-col items-center md:items-start gap-y-2.5 md:gap-y-5
       max-w-lg
-      [&_p]:text-center md:[&_p]:text-left
-      [&_div]:hidden md:[&_div]:flex [&_div]:gap-x-12
+   }
+   #Home article p {
+      @apply
+      text-center md:text-left
+   }
+   #Home article div {
+      @apply
+      hidden md:flex gap-x-12
+      backdrop-blur
       [&_svg]:IconLink
-      [&_button]:hidden md:[&_button]:block
-      [&_button]:BtnTour
+   }
+   #Home article button {
+      @apply
+      BtnTour
+      hidden md:block
+   }
+   #Home img {
+      @apply
+      md:ml-5 lg:ml-0 lg:mr-10
    }
 }
 

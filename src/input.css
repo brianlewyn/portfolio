@@ -23,6 +23,7 @@
    }
    section {
       @apply
+      hidden
       w-full h-full
    }
    h1 {
@@ -33,7 +34,9 @@
 
    /* CSS !important */
    .Flex {
-      @apply flex !important 
+      @apply
+      flex 
+      !important 
    }
 
 
@@ -59,7 +62,7 @@
       @apply
       pt-1.5 px-4 pb-1
       font-normal text-sm font-Comfortaa
-      text-Teal bg-Dark rounded
+      text-Teal bg-Dark hover:bg-Dark/[.90] rounded
    }
    .BtnIcon {
       @apply
@@ -186,9 +189,14 @@
 
 
    /* Sections Templates */
+   .SECTION {
+      @apply 
+      flex
+      !important
+   }
    #Home {
       @apply
-      flex flex-col md:flex-row justify-evenly items-center
+      flex-col md:flex-row justify-evenly items-center
    }
    #Home article {
       @apply
@@ -213,6 +221,35 @@
    #Home img {
       @apply
       md:ml-5 lg:ml-0 lg:mr-10
+   }
+
+   #About {
+      @apply
+      bg-red-400
+   }
+   #Projects {
+      @apply
+      bg-sky-400
+   }
+   #Skills {
+      @apply
+      bg-teal-400
+   }
+   #Library {
+      @apply
+      bg-cyan-400
+   }
+   #Extensions {
+      @apply
+      bg-pink-400
+   }
+   #Plugins {
+      @apply
+      bg-orange-400
+   }
+   #Learning {
+      @apply
+      bg-purple-400
    }
 }
 

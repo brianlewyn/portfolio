@@ -100,12 +100,6 @@
       bg-DarkGlass rounded-md
       [&_svg]:IconLink
    }
-   .AdminDetails {
-      @apply
-      flex md:hidden flex-col grow
-      font-medium font-Comfortaa text-WhiteGlass
-      first:[&_div]:text-lg last:[&_div]:text-sm
-   }
    .BtnSection {
       @apply
       flex justify-center gap-x-2.5
@@ -116,6 +110,12 @@
       [&_svg]:w-6 [&_svg]:h-6
       [&_div]:flex md:[&_div]:hidden [&_div]:grow
    }
+   .AdminDetails {
+      @apply
+      flex md:hidden flex-col grow
+      font-medium font-Comfortaa text-WhiteGlass
+      first:[&_div]:text-lg last:[&_div]:text-sm
+   }
 
 
    /* Components */
@@ -125,15 +125,15 @@
       [&_a]:LogoLink
       [&>svg]:BtnMenu
    }
-   .AdminGroup {
-      @apply
-      flex justify-center gap-2.5
-      [&>div]:AdminDetails
-   }
    .BtnGroup {
       @apply
       flex flex-col gap-y-5
       [&_button]:BtnSection
+   }
+   .AdminGroup {
+      @apply
+      flex justify-center gap-2.5
+      [&>div]:AdminDetails
    }
 
 
@@ -149,9 +149,16 @@
       @apply
       fixed top-0 left-0 z-90
       hidden md:flex flex-col justify-between gap-y-5 overflow-x-hidden
-      w-72 md:w-14 min-h-full px-3 md:px-2 py-3
+      w-72 md:w-14 h-full px-3 md:px-2 py-3
       bg-DarkGlass
       backdrop-blur
+   }
+   .SBExtend {
+      @apply
+      md:w-72 md:px-3
+      md:[&_a]:flex
+      md:[&_button_div]:flex
+      md:last:[&_div_div]:flex
    }
    .TopBar {
       @apply

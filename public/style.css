@@ -458,22 +458,67 @@ h1{
   font-weight: 500;
 }
 
-/* CSS !important */
-
-.Flex{
-  display: flex !important;
-}
-
 /* Atoms */
 
-.BUTTON{
-  fill: rgb(var(--Teal) / 1) !important;
-  color: rgb(var(--Teal) / 1) !important;
+.BtnTour{
+  border-radius: 0.25rem;
+  background-color: rgb(var(--Dark) / 1);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.25rem;
+  font-family: Comfortaa;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: rgb(var(--Teal) / 1);
+}
+
+.BtnLink{
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: rgb(var(--White) / .68);
+}
+
+.BtnLink:hover{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  fill: #fff;
+}
+
+@media (min-width: 768px){
+  .BtnLink{
+    fill: rgb(var(--Dark) / .68);
+  }
+
+  .BtnLink:hover{
+    fill: rgb(var(--Dark) / 1);
+  }
+}
+
+.BtnIcon{
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  fill: rgb(var(--White) / .68);
+}
+
+.BtnIcon:hover{
+  fill: rgb(var(--Teal) / 1);
+}
+
+.SectionTitle{
+  display: flex;
+  flex-grow: 1;
+  font-family: Comfortaa;
+  font-weight: 400;
+  color: rgb(var(--White) / .68);
 }
 
 /* Molecules */
 
-.RowLinks{
+.BtnLinkGroup{
   position: absolute;
   left: 1rem;
   bottom: 3rem;
@@ -483,18 +528,18 @@ h1{
   align-items: center;
   justify-content: space-between;
   border-radius: 0.375rem;
-  background-color: rgb(var(--Dark) / .60);
+  background-color: rgb(var(--Dark) / .68);
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.RowLinks svg{
+.BtnLinkGroup>a>svg{
   height: 1.5rem;
   width: 1.5rem;
-  fill: rgb(var(--White) / .65);
+  fill: rgb(var(--White) / .68);
 }
 
-.RowLinks svg:hover{
+.BtnLinkGroup>a>svg:hover{
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -502,13 +547,85 @@ h1{
 }
 
 @media (min-width: 768px){
-  .RowLinks svg{
-    fill: rgb(var(--Dark) / .60);
+  .BtnLinkGroup>a>svg{
+    fill: rgb(var(--Dark) / .68);
   }
 
-  .RowLinks svg:hover{
+  .BtnLinkGroup>a>svg:hover{
     fill: rgb(var(--Dark) / 1);
   }
+}
+
+.BtnSection{
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  border-radius: 0.25rem;
+  fill: rgb(var(--White) / .68);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: Comfortaa;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  color: rgb(var(--White) / .68);
+}
+
+.BtnSection:hover{
+  background-color: rgb(var(--Teal) / .20);
+  fill: rgb(var(--Teal) / 1);
+  color: rgb(var(--Teal) / 1);
+}
+
+@media (min-width: 768px){
+  .BtnSection{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.BtnSection>svg{
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.BtnSection>div{
+  display: flex;
+  flex-grow: 1;
+}
+
+@media (min-width: 768px){
+  .BtnSection>div{
+    display: none;
+  }
+}
+
+.AdminDetails{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  font-family: Comfortaa;
+  font-weight: 500;
+  color: rgb(var(--White) / .68);
+}
+
+@media (min-width: 768px){
+  .AdminDetails{
+    display: none;
+  }
+}
+
+.AdminDetails>div:first-child{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.AdminDetails>div:last-child{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 /* Components */
@@ -518,32 +635,11 @@ h1{
   justify-content: center;
 }
 
-.LogoGroup a{
-  display: flex;
-  flex-grow: 1;
-}
-
-@media (min-width: 768px){
-  .LogoGroup a{
-    display: none;
-  }
-}
-
-.LogoGroup a svg{
-  height: 1.5rem;
-  width: 8.5rem;
-  fill: rgb(var(--White) / .65);
-}
-
-.LogoGroup a svg:hover{
-  fill: rgb(var(--Teal) / 1);
-}
-
 .LogoGroup>svg{
   height: 1.5rem;
   width: 1.5rem;
   cursor: pointer;
-  fill: rgb(var(--White) / .65);
+  fill: rgb(var(--White) / .68);
 }
 
 .LogoGroup>svg:hover{
@@ -556,7 +652,17 @@ h1{
 
 @media (min-width: 768px){
   .LogoGroup>svg{
-    display: flex;
+    display: block;
+  }
+}
+
+.LogoGroup>a{
+  margin-right: auto;
+}
+
+@media (min-width: 768px){
+  .LogoGroup>a{
+    display: none;
   }
 }
 
@@ -572,7 +678,7 @@ h1{
   -moz-column-gap: 0.625rem;
        column-gap: 0.625rem;
   border-radius: 0.25rem;
-  fill: rgb(var(--White) / .65);
+  fill: rgb(var(--White) / .68);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -581,7 +687,7 @@ h1{
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 400;
-  color: rgb(var(--White) / .65);
+  color: rgb(var(--White) / .68);
 }
 
 .BtnGroup button:hover{
@@ -597,18 +703,18 @@ h1{
   }
 }
 
-.BtnGroup button svg{
+.BtnGroup button>svg{
   height: 1.5rem;
   width: 1.5rem;
 }
 
-.BtnGroup button div{
+.BtnGroup button>div{
   display: flex;
   flex-grow: 1;
 }
 
 @media (min-width: 768px){
-  .BtnGroup button div{
+  .BtnGroup button>div{
     display: none;
   }
 }
@@ -625,7 +731,7 @@ h1{
   flex-direction: column;
   font-family: Comfortaa;
   font-weight: 500;
-  color: rgb(var(--White) / .65);
+  color: rgb(var(--White) / .68);
 }
 
 @media (min-width: 768px){
@@ -634,14 +740,87 @@ h1{
   }
 }
 
-.AdminGroup>div div:first-child{
+.AdminGroup>div>div:first-child{
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-.AdminGroup>div div:last-child{
+.AdminGroup>div>div:last-child{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+/* Actives */
+
+.BtnLinkGroup.Active{
+  display: flex !important;
+}
+
+.\!SideBar.Active{
+  display: flex;
+}
+
+@media (min-width: 768px){
+  .\!SideBar.Active{
+    width: 18rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .\!SideBar.Active button{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .\!SideBar.Active a{
+    display: inline;
+  }
+
+  .\!SideBar.Active button>div{
+    display: flex;
+  }
+
+  .\!SideBar.Active>div>div:last-child{
+    display: flex;
+  }
+}
+
+.SideBar.Active{
+  display: flex;
+}
+
+@media (min-width: 768px){
+  .SideBar.Active{
+    width: 18rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .SideBar.Active button{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .SideBar.Active a{
+    display: inline;
+  }
+
+  .SideBar.Active button>div{
+    display: flex;
+  }
+
+  .SideBar.Active>div>div:last-child{
+    display: flex;
+  }
+}
+
+button.Active{
+  fill: rgb(var(--Teal) / 1) !important;
+  color: rgb(var(--Teal) / 1) !important;
+}
+
+section.Active{
+  display: flex !important;
 }
 
 /* Structure */
@@ -651,7 +830,7 @@ h1{
   top: 0px;
   left: 0px;
   z-index: 100;
-  display: none;
+  display: flex;
   height: 100vh;
   width: 100vw;
   align-items: center;
@@ -664,7 +843,7 @@ h1{
   top: 0px;
   left: 0px;
   z-index: 100;
-  display: none;
+  display: flex;
   height: 100vh;
   width: 100vw;
   align-items: center;
@@ -684,11 +863,8 @@ h1{
   justify-content: space-between;
   row-gap: 1.25rem;
   overflow-x: hidden;
-  background-color: rgb(var(--Dark) / .60);
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  background-color: rgb(var(--Dark) / .68);
+  padding: 0.75rem;
   --tw-backdrop-blur: blur(8px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -715,11 +891,8 @@ h1{
   justify-content: space-between;
   row-gap: 1.25rem;
   overflow-x: hidden;
-  background-color: rgb(var(--Dark) / .60);
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  background-color: rgb(var(--Dark) / .68);
+  padding: 0.75rem;
   --tw-backdrop-blur: blur(8px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -755,12 +928,6 @@ h1{
   }
 }
 
-.\!TopBar svg{
-  height: 1.5rem;
-  width: 8.5rem;
-  fill: rgb(var(--Dark) / 1);
-}
-
 .\!TopBar button{
   border-radius: 0.25rem;
   background-color: rgb(var(--Dark) / 1);
@@ -773,10 +940,6 @@ h1{
   line-height: 1.25rem;
   font-weight: 400;
   color: rgb(var(--Teal) / 1);
-}
-
-.\!TopBar button:hover{
-  background-color: rgb(var(--Dark) / .90);
 }
 
 .TopBar{
@@ -800,12 +963,6 @@ h1{
   }
 }
 
-.TopBar svg{
-  height: 1.5rem;
-  width: 8.5rem;
-  fill: rgb(var(--Dark) / 1);
-}
-
 .TopBar button{
   border-radius: 0.25rem;
   background-color: rgb(var(--Dark) / 1);
@@ -820,10 +977,6 @@ h1{
   color: rgb(var(--Teal) / 1);
 }
 
-.TopBar button:hover{
-  background-color: rgb(var(--Dark) / .90);
-}
-
 .\!MainFrame{
   position: static;
   top: 0px;
@@ -831,8 +984,7 @@ h1{
   z-index: 0;
   height: calc(100% - 6rem);
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 1.75rem;
 }
 
@@ -851,8 +1003,7 @@ h1{
   z-index: 0;
   height: calc(100% - 6rem);
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 1.75rem;
 }
 
@@ -891,7 +1042,7 @@ h1{
   height: 1.5rem;
   width: 1.5rem;
   cursor: pointer;
-  fill: rgb(var(--White) / .65);
+  fill: rgb(var(--White) / .68);
 }
 
 .\!BottomBar>svg:hover{
@@ -903,7 +1054,7 @@ h1{
   flex-grow: 1;
   font-family: Comfortaa;
   font-weight: 400;
-  color: rgb(var(--White) / .65);
+  color: rgb(var(--White) / .68);
 }
 
 .BottomBar{
@@ -933,7 +1084,7 @@ h1{
   height: 1.5rem;
   width: 1.5rem;
   cursor: pointer;
-  fill: rgb(var(--White) / .65);
+  fill: rgb(var(--White) / .68);
 }
 
 .BottomBar>svg:hover{
@@ -945,162 +1096,7 @@ h1{
   flex-grow: 1;
   font-family: Comfortaa;
   font-weight: 400;
-  color: rgb(var(--White) / .65);
-}
-
-/* Sections Templates */
-
-.SECTION{
-  display: flex !important;
-}
-
-#Home{
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-@media (min-width: 768px){
-  #Home{
-    flex-direction: row;
-  }
-}
-
-#Home article{
-  display: flex;
-  max-width: 32rem;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 0.625rem;
-}
-
-@media (min-width: 768px){
-  #Home article{
-    align-items: flex-start;
-    row-gap: 1.25rem;
-  }
-}
-
-#Home article p{
-  text-align: center;
-}
-
-@media (min-width: 768px){
-  #Home article p{
-    text-align: left;
-  }
-}
-
-#Home article div{
-  display: none;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
-  --tw-backdrop-blur: blur(8px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-@media (min-width: 768px){
-  #Home article div{
-    display: flex;
-  }
-}
-
-#Home article div svg{
-  height: 1.5rem;
-  width: 1.5rem;
-  fill: rgb(var(--White) / .65);
-}
-
-#Home article div svg:hover{
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  fill: #fff;
-}
-
-@media (min-width: 768px){
-  #Home article div svg{
-    fill: rgb(var(--Dark) / .60);
-  }
-
-  #Home article div svg:hover{
-    fill: rgb(var(--Dark) / 1);
-  }
-}
-
-#Home article button{
-  border-radius: 0.25rem;
-  background-color: rgb(var(--Dark) / 1);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.375rem;
-  padding-bottom: 0.25rem;
-  font-family: Comfortaa;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-  color: rgb(var(--Teal) / 1);
-}
-
-#Home article button:hover{
-  background-color: rgb(var(--Dark) / .90);
-}
-
-#Home article button{
-  display: none;
-}
-
-@media (min-width: 768px){
-  #Home article button{
-    display: block;
-  }
-
-  #Home img{
-    margin-left: 1.25rem;
-  }
-}
-
-@media (min-width: 1024px){
-  #Home img{
-    margin-left: 0px;
-    margin-right: 2.5rem;
-  }
-}
-
-#About{
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
-#Projects{
-  --tw-bg-opacity: 1;
-  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
-}
-
-#Skills{
-  --tw-bg-opacity: 1;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity));
-}
-
-#Library{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
-}
-
-#Extensions{
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 114 182 / var(--tw-bg-opacity));
-}
-
-#Plugins{
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
-}
-
-#Learning{
-  --tw-bg-opacity: 1;
-  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
+  color: rgb(var(--White) / .68);
 }
 
 *, ::before, ::after{
@@ -1244,10 +1240,139 @@ h1{
   --tw-backdrop-sepia:  ;
 }
 
+.flex{
+  display: flex;
+}
+
+.hidden{
+  display: none;
+}
+
+.max-w-lg{
+  max-width: 32rem;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-evenly{
+  justify-content: space-evenly;
+}
+
+.gap-y-2\.5{
+  row-gap: 0.625rem;
+}
+
+.gap-y-2{
+  row-gap: 0.5rem;
+}
+
+.gap-x-12{
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
+
+.bg-red-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
+.bg-sky-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+}
+
+.bg-teal-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(45 212 191 / var(--tw-bg-opacity));
+}
+
+.bg-cyan-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
+}
+
+.bg-pink-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 114 182 / var(--tw-bg-opacity));
+}
+
+.bg-orange-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
+}
+
+.bg-purple-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
+}
+
+.text-center{
+  text-align: center;
+}
+
 /* @tailwind components; */
 
-/* @tailwind utilities; */
+@media (min-width: 768px){
+  .md\:ml-5{
+    margin-left: 1.25rem;
+  }
 
-/* Update style.css:
-npx tailwindcss -c ./tailwind.config.js -i ./src/input.css -o ./public/style.css 
-*/
+  .md\:block{
+    display: block;
+  }
+
+  .md\:flex{
+    display: flex;
+  }
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+
+  .md\:items-start{
+    align-items: flex-start;
+  }
+
+  .md\:gap-y-5{
+    row-gap: 1.25rem;
+  }
+
+  .md\:text-left{
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:mr-10{
+    margin-right: 2.5rem;
+  }
+}
+
+.\[\&_svg\]\:BtnLink svg{
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: rgb(var(--White) / .68);
+}
+
+.\[\&_svg\]\:BtnLink svg:hover{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  fill: #fff;
+}
+
+@media (min-width: 768px){
+  .\[\&_svg\]\:BtnLink svg{
+    fill: rgb(var(--Dark) / .68);
+  }
+
+  .\[\&_svg\]\:BtnLink svg:hover{
+    fill: rgb(var(--Dark) / 1);
+  }
+}

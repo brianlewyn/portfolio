@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 @tailwind base;
+@tailwind utilities;
+/* @tailwind components; */
 
 @layer base {
 
@@ -11,7 +13,6 @@
       --Teal: 167 241 225;
       --White: 225 225 225;
    }
-
 
    /* HTML */
    body {
@@ -31,77 +32,44 @@
       font-medium text-3xl font-Comfortaa
    }
 
-
-   /* CSS !important */
-   .Flex {
-      @apply
-      flex 
-      !important 
-   }
-
-
    /* Atoms */
-   .IconLink {
-      @apply
-      w-6 h-6
-      hover:scale-110
-      fill-WhiteGlass hover:fill-white
-      md:fill-DarkGlass md:hover:fill-Dark
-   }
-   .LogoDark {
-      @apply
-      w-[8.5rem] h-6
-      fill-Dark
-   }
-   .LogoLight {
-      @apply
-      w-[8.5rem] h-6
-      fill-WhiteGlass hover:fill-Teal
+   .Icon {
+      @apply w-6 h-6
    }
    .BtnTour {
       @apply
       pt-1.5 px-4 pb-1
       font-normal text-sm font-Comfortaa
-      text-Teal bg-Dark hover:bg-Dark/[.90] rounded
+      text-Teal bg-Dark rounded
+   }
+   .BtnLink {
+      @apply
+      Icon
+      hover:scale-110
+      fill-WhiteGlass hover:fill-white
+      md:fill-DarkGlass md:hover:fill-Dark
    }
    .BtnIcon {
       @apply
-      w-6 h-6
+      Icon
       fill-WhiteGlass hover:fill-Teal
       cursor-pointer
    }
-   .BtnMenu {
-      @apply
-      BtnIcon
-      hidden md:flex
-   }
-   .BUTTON {
-      @apply
-      text-Teal
-      fill-Teal
-      !important
-   }
-   .TitleCurrentSection {
+   .SectionTitle {
       @apply
       flex grow
       font-normal font-Comfortaa
       text-WhiteGlass
    }
 
-
    /* Molecules */
-   .LogoLink {
-      @apply
-      flex md:hidden grow
-      [&_svg]:LogoLight
-   }
-   .RowLinks {
+   .BtnLinkGroup {
       @apply
       absolute left-4 bottom-12
       hidden justify-between items-center
       w-72 h-12 px-4
       bg-DarkGlass rounded-md
-      [&_svg]:IconLink
+      [&>a>svg]:BtnLink
    }
    .BtnSection {
       @apply
@@ -110,23 +78,24 @@
       font-normal text-lg font-Comfortaa
       text-WhiteGlass hover:text-Teal hover:bg-TealGlass rounded
       fill-WhiteGlass hover:fill-Teal
-      [&_svg]:w-6 [&_svg]:h-6
-      [&_div]:flex md:[&_div]:hidden [&_div]:grow
+      [&>svg]:Icon
+      [&>div]:flex md:[&>div]:hidden [&>div]:grow
    }
    .AdminDetails {
       @apply
       flex md:hidden flex-col grow
       font-medium font-Comfortaa text-WhiteGlass
-      first:[&_div]:text-lg last:[&_div]:text-sm
+      first:[&>div]:text-lg last:[&>div]:text-sm
    }
-
 
    /* Components */
    .LogoGroup {
       @apply
       flex justify-center
-      [&_a]:LogoLink
-      [&>svg]:BtnMenu
+      md:[&>a]:hidden
+      [&>a]:mr-auto
+      [&>svg]:BtnIcon
+      [&>svg]:hidden md:[&>svg]:block
    }
    .BtnGroup {
       @apply
@@ -139,12 +108,38 @@
       [&>div]:AdminDetails
    }
 
+   /* Actives */
+   .BtnLinkGroup.Active {
+      @apply
+      flex
+      !important
+   }
+   .SideBar.Active {
+      @apply
+      flex
+      md:w-72 md:px-3
+      md:[&_a]:inline
+      md:[&_button]:px-4
+      md:[&_button>div]:flex
+      md:last:[&>div>div]:flex
+   }
+   button.Active {
+      @apply
+      text-Teal
+      fill-Teal
+      !important
+   }
+   section.Active {
+      @apply
+      flex
+      !important
+   }
 
    /* Structure */
    .Loading {
       @apply
       fixed top-0 left-0 z-100
-      hidden justify-center items-center
+      flex justify-center items-center
       w-screen h-screen
       bg-Dark
    }
@@ -152,29 +147,21 @@
       @apply
       fixed top-0 left-0 z-90
       hidden md:flex flex-col justify-between gap-y-5 overflow-x-hidden
-      w-72 md:w-14 h-full px-3 md:px-2 py-3
+      w-72 md:w-14 h-full p-3 md:px-2
       bg-DarkGlass
       backdrop-blur
-   }
-   .SBExtend {
-      @apply
-      md:w-72 md:px-3
-      md:[&_a]:flex
-      md:[&_button_div]:flex
-      md:last:[&_div_div]:flex
    }
    .TopBar {
       @apply
       relative top-0 left-0 z-80
       flex md:hidden justify-between items-center
       h-12 w-full px-4 pt-2
-      [&_svg]:LogoDark
       [&_button]:BtnTour
    }
    .MainFrame {
       @apply
       static md:relative top-0 left-14 z-0
-      overflow-x-hidden overflow-y-auto
+      overflow-hidden
       w-full h-[calc(100%_-_6rem)] p-7
       md:w-[calc(100%_-_3.5rem)] md:h-full
    }
@@ -184,78 +171,6 @@
       flex md:hidden justify-start items-start gap-x-2.5
       w-full h-12 px-4 pt-2
       [&>svg]:BtnIcon
-      [&>span]:TitleCurrentSection
-   }
-
-
-   /* Sections Templates */
-   .SECTION {
-      @apply 
-      flex
-      !important
-   }
-   #Home {
-      @apply
-      flex-col md:flex-row justify-evenly items-center
-   }
-   #Home article {
-      @apply
-      flex flex-col items-center md:items-start gap-y-2.5 md:gap-y-5
-      max-w-lg
-   }
-   #Home article p {
-      @apply
-      text-center md:text-left
-   }
-   #Home article div {
-      @apply
-      hidden md:flex gap-x-12
-      backdrop-blur
-      [&_svg]:IconLink
-   }
-   #Home article button {
-      @apply
-      BtnTour
-      hidden md:block
-   }
-   #Home img {
-      @apply
-      md:ml-5 lg:ml-0 lg:mr-10
-   }
-
-   #About {
-      @apply
-      bg-red-400
-   }
-   #Projects {
-      @apply
-      bg-sky-400
-   }
-   #Skills {
-      @apply
-      bg-teal-400
-   }
-   #Library {
-      @apply
-      bg-cyan-400
-   }
-   #Extensions {
-      @apply
-      bg-pink-400
-   }
-   #Plugins {
-      @apply
-      bg-orange-400
-   }
-   #Learning {
-      @apply
-      bg-purple-400
+      [&>span]:SectionTitle
    }
 }
-
-/* @tailwind components; */
-/* @tailwind utilities; */
-
-/* Update style.css:
-npx tailwindcss -c ./tailwind.config.js -i ./src/input.css -o ./public/style.css 
-*/

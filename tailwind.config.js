@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./public/index.html'],
+  content: ['./public/**/*.html'],
   theme: {
     extend: {
       fontFamily: {
@@ -12,8 +12,8 @@ module.exports = {
         'Teal': 'rgb(var(--Teal) / 1)',
         'Dark': 'rgb(var(--Dark) / 1)',
         'TealGlass': 'rgb(var(--Teal) / .20)',
-        'DarkGlass': 'rgb(var(--Dark) / .60)',
-        'WhiteGlass': 'rgb(var(--White) / .65)',
+        'DarkGlass': 'rgb(var(--Dark) / .68)',
+        'WhiteGlass': 'rgb(var(--White) / .68)',
       },
       zIndex: {
         '80': '80',

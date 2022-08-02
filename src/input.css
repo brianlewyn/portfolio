@@ -15,13 +15,13 @@
    }
 
    ::-webkit-scrollbar {
-      @apply md:w-2.5
+      @apply lg:w-2.5
    }
    ::-webkit-scrollbar-thumb {
-      @apply md:bg-zinc-500
+      @apply lg:bg-zinc-500
    }
    ::-webkit-scrollbar-track {
-      @apply md:bg-transparent
+      @apply lg:bg-transparent
    }
 
    /* HTML */

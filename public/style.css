@@ -428,6 +428,21 @@ video {
   --White: 225 225 225;
 }
 
+@media (min-width: 768px){
+  ::-webkit-scrollbar{
+    width: 0.625rem;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    --tw-bg-opacity: 1;
+    background-color: rgb(113 113 122 / var(--tw-bg-opacity));
+  }
+
+  ::-webkit-scrollbar-track{
+    background-color: transparent;
+  }
+}
+
 /* HTML */
 
 body{
@@ -762,7 +777,7 @@ h1{
 
 @media (min-width: 768px){
   .\!SideBar.Active{
-    width: 18rem;
+    width: 16rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
@@ -791,7 +806,7 @@ h1{
 
 @media (min-width: 768px){
   .SideBar.Active{
-    width: 18rem;
+    width: 16rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }

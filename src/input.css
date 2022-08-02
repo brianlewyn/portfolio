@@ -14,6 +14,16 @@
       --White: 225 225 225;
    }
 
+   ::-webkit-scrollbar {
+      @apply md:w-2.5
+   }
+   ::-webkit-scrollbar-thumb {
+      @apply md:bg-zinc-500
+   }
+   ::-webkit-scrollbar-track {
+      @apply md:bg-transparent
+   }
+
    /* HTML */
    body {
       @apply
@@ -117,7 +127,7 @@
    .SideBar.Active {
       @apply
       flex
-      md:w-72 md:px-3
+      md:w-64 md:px-3
       md:[&_a]:inline
       md:[&_button]:px-4
       md:[&_button>div]:flex

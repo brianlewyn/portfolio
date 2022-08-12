@@ -43,7 +43,7 @@
    }
 
    /* Atoms */
-   .Icon {
+   .ix {
       @apply w-6 h-6
    }
    .BtnTour {
@@ -54,14 +54,12 @@
    }
    .BtnLink {
       @apply
-      Icon
       hover:scale-110
       fill-WhiteGlass hover:fill-white
       md:fill-DarkGlass md:hover:fill-Dark
    }
    .BtnIcon {
       @apply
-      Icon
       fill-WhiteGlass hover:fill-Teal
       cursor-pointer
    }
@@ -88,7 +86,6 @@
       font-normal text-lg font-Comfortaa
       text-WhiteGlass hover:text-Teal hover:bg-TealGlass rounded
       fill-WhiteGlass hover:fill-Teal
-      [&>svg]:Icon
       [&>div]:flex md:[&>div]:hidden [&>div]:grow
    }
    .AdminDetails {
@@ -120,9 +117,7 @@
 
    /* Actives */
    .BtnLinkGroup.Active {
-      @apply
-      flex
-      !important
+      @apply !flex
    }
    .SideBar.Active {
       @apply
@@ -135,14 +130,11 @@
    }
    button.Active {
       @apply
-      text-Teal
-      fill-Teal
-      !important
+      !text-Teal
+      !fill-Teal
    }
    section.Active {
-      @apply
-      flex
-      !important
+      @apply !flex
    }
 
    /* Structure */
@@ -152,6 +144,7 @@
       flex justify-center items-center
       w-screen h-screen
       bg-Dark
+      [&>img]:animate-pulse
    }
    .SideBar {
       @apply

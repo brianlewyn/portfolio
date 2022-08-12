@@ -428,7 +428,7 @@ video {
   --White: 225 225 225;
 }
 
-@media (min-width: 768px){
+@media (min-width: 1024px){
   ::-webkit-scrollbar{
     width: 0.625rem;
   }
@@ -475,6 +475,11 @@ h1{
 
 /* Atoms */
 
+.ix{
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
 .BtnTour{
   border-radius: 0.25rem;
   background-color: rgb(var(--Dark) / 1);
@@ -487,48 +492,6 @@ h1{
   line-height: 1.25rem;
   font-weight: 400;
   color: rgb(var(--Teal) / 1);
-}
-
-.BtnLink{
-  height: 1.5rem;
-  width: 1.5rem;
-  fill: rgb(var(--White) / .68);
-}
-
-.BtnLink:hover{
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  fill: #fff;
-}
-
-@media (min-width: 768px){
-  .BtnLink{
-    fill: rgb(var(--Dark) / .68);
-  }
-
-  .BtnLink:hover{
-    fill: rgb(var(--Dark) / 1);
-  }
-}
-
-.BtnIcon{
-  height: 1.5rem;
-  width: 1.5rem;
-  cursor: pointer;
-  fill: rgb(var(--White) / .68);
-}
-
-.BtnIcon:hover{
-  fill: rgb(var(--Teal) / 1);
-}
-
-.SectionTitle{
-  display: flex;
-  flex-grow: 1;
-  font-family: Comfortaa;
-  font-weight: 400;
-  color: rgb(var(--White) / .68);
 }
 
 /* Molecules */
@@ -549,8 +512,6 @@ h1{
 }
 
 .BtnLinkGroup>a>svg{
-  height: 1.5rem;
-  width: 1.5rem;
   fill: rgb(var(--White) / .68);
 }
 
@@ -568,53 +529,6 @@ h1{
 
   .BtnLinkGroup>a>svg:hover{
     fill: rgb(var(--Dark) / 1);
-  }
-}
-
-.BtnSection{
-  display: flex;
-  justify-content: center;
-  -moz-column-gap: 0.625rem;
-       column-gap: 0.625rem;
-  border-radius: 0.25rem;
-  fill: rgb(var(--White) / .68);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-family: Comfortaa;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 400;
-  color: rgb(var(--White) / .68);
-}
-
-.BtnSection:hover{
-  background-color: rgb(var(--Teal) / .20);
-  fill: rgb(var(--Teal) / 1);
-  color: rgb(var(--Teal) / 1);
-}
-
-@media (min-width: 768px){
-  .BtnSection{
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-}
-
-.BtnSection>svg{
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-.BtnSection>div{
-  display: flex;
-  flex-grow: 1;
-}
-
-@media (min-width: 768px){
-  .BtnSection>div{
-    display: none;
   }
 }
 
@@ -650,9 +564,17 @@ h1{
   justify-content: center;
 }
 
+.LogoGroup>a{
+  margin-right: auto;
+}
+
+@media (min-width: 768px){
+  .LogoGroup>a{
+    display: none;
+  }
+}
+
 .LogoGroup>svg{
-  height: 1.5rem;
-  width: 1.5rem;
   cursor: pointer;
   fill: rgb(var(--White) / .68);
 }
@@ -668,16 +590,6 @@ h1{
 @media (min-width: 768px){
   .LogoGroup>svg{
     display: block;
-  }
-}
-
-.LogoGroup>a{
-  margin-right: auto;
-}
-
-@media (min-width: 768px){
-  .LogoGroup>a{
-    display: none;
   }
 }
 
@@ -716,11 +628,6 @@ h1{
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
-}
-
-.BtnGroup button>svg{
-  height: 1.5rem;
-  width: 1.5rem;
 }
 
 .BtnGroup button>div{
@@ -853,6 +760,23 @@ section.Active{
   background-color: rgb(var(--Dark) / 1);
 }
 
+@-webkit-keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+
+@keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+
+.\!Loading>img{
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .Loading{
   position: fixed;
   top: 0px;
@@ -864,6 +788,17 @@ section.Active{
   align-items: center;
   justify-content: center;
   background-color: rgb(var(--Dark) / 1);
+}
+
+@keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+
+.Loading>img{
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .\!SideBar{
@@ -1054,8 +989,6 @@ section.Active{
 }
 
 .\!BottomBar>svg{
-  height: 1.5rem;
-  width: 1.5rem;
   cursor: pointer;
   fill: rgb(var(--White) / .68);
 }
@@ -1096,8 +1029,6 @@ section.Active{
 }
 
 .BottomBar>svg{
-  height: 1.5rem;
-  width: 1.5rem;
   cursor: pointer;
   fill: rgb(var(--White) / .68);
 }
@@ -1370,8 +1301,6 @@ section.Active{
 }
 
 .\[\&_svg\]\:BtnLink svg{
-  height: 1.5rem;
-  width: 1.5rem;
   fill: rgb(var(--White) / .68);
 }
 

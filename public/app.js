@@ -36,10 +36,9 @@ const RowLinks = document.querySelector('.BtnLinkGroup')
 Atom.addEventListener('click', () => {
    if (RowLinks.classList.contains('Active')){
       RowLinks.classList.remove('Active')
-      Atom.innerHTML = localStorage.getItem('Atom')
+      Atom.innerHTML = ix.atom
    } else {
       RowLinks.classList.add('Active')
-      localStorage.setItem('Atom', Atom.innerHTML)
       Atom.innerHTML = ix.x
    }
 })

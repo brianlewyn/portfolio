@@ -3,7 +3,7 @@ setTimeout(function() {
    Loading.classList.add('hidden')
 }, 2000);
 
-const BtnArray = Array.from(document.querySelectorAll('.BtnGroup button'))
+const BtnArray = Array.from(document.querySelectorAll('.Box_BtnSection button'))
 const SectionArray = Array.from(document.querySelectorAll('main section'))
 const TitleSection = document.getElementById('CurrentTitle')
 
@@ -32,7 +32,7 @@ BtnArray.forEach(btn => {
 
 
 const Atom = document.getElementById('Atom')
-const RowLinks = document.querySelector('.BtnLinkGroup')
+const RowLinks = document.querySelector('.Box_BtnLink')
 Atom.addEventListener('click', () => {
    if (RowLinks.classList.contains('Active')){
       RowLinks.classList.remove('Active')

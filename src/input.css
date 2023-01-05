@@ -7,11 +7,12 @@
 
 @layer base {
 
+   /* RGB colors */
    :root{
-      --Red: 255 0 81; 
-      --Dark: 9 11 16;
+      --White: 255 255 255;
       --Teal: 167 241 225;
-      --White: 225 225 225;
+      --Gray: 177 193 225;
+      --Dark: 9 11 16;
    }
 
    /* HTML */
@@ -20,20 +21,19 @@
       overflow-x-hidden
       w-screen h-screen
       font-light text-lg font-Poppins
-      bg-gradient-to-b from-Teal to-Dark
+      text-Gray bg-Dark
    }
    section {
-      @apply
-      hidden
-      w-full h-full
+      @apply hidden
+   }
+   h1, h2 {
+      @apply font-medium font-Comfortaa
    }
    h1 {
-      @apply
-      font-medium text-3xl md:text-4xl font-Comfortaa
+      @apply text-3xl md:text-4xl
    }
    h2 {
-      @apply
-      font-medium text-2xl md:text-3xl font-Comfortaa
+      @apply text-2xl md:text-3xl
    }
 
    /* Atoms */
@@ -44,73 +44,73 @@
       @apply
       pt-1.5 px-4 pb-1
       font-normal text-sm font-Comfortaa
-      text-Teal bg-Dark rounded
+      text-Dark bg-Gray rounded
+   }
+   .BtnIcon {
+      @apply
+      fill-Gray hover:fill-Teal
+      cursor-pointer
    }
    .BtnLink {
       @apply
       hover:scale-110
-      fill-WhiteGlass hover:fill-white
-      md:fill-DarkGlass md:hover:fill-Dark
-   }
-   .BtnIcon {
-      @apply
-      fill-WhiteGlass hover:fill-Teal
-      cursor-pointer
+      fill-Dark hover:fill-Dark
+      md:fill-Gray md:hover:fill-Teal
    }
    .SectionTitle {
       @apply
       flex grow
       font-normal font-Comfortaa
-      text-WhiteGlass
+      text-Gray
    }
 
    /* Molecules */
-   .BtnLinkGroup {
-      @apply
-      absolute left-4 bottom-12
-      hidden justify-between items-center
-      w-72 h-12 px-4
-      bg-DarkGlass rounded-md
-      [&>a>svg]:BtnLink
-   }
    .BtnSection {
       @apply
       flex justify-center gap-x-2.5
       px-4 md:px-2 py-2
       font-normal text-lg font-Comfortaa
-      text-WhiteGlass hover:text-Teal hover:bg-TealGlass rounded
-      fill-WhiteGlass hover:fill-Teal
-      [&>div]:flex md:[&>div]:hidden [&>div]:grow
+      text-Gray hover:text-Teal hover:bg-TealGlass rounded
+      fill-Gray hover:fill-Teal
+      [&_div]:flex md:[&_div]:hidden [&>_div]:grow
    }
-   .AdminDetails {
+   .Details {
       @apply
       flex md:hidden flex-col grow
-      font-medium font-Comfortaa text-WhiteGlass
-      first:[&>div]:text-lg last:[&>div]:text-sm
+      font-medium font-Comfortaa text-Gray
+      first:[&_div]:text-lg last:[&_div]:text-sm
+   }
+   .Box_BtnLink {
+      @apply
+      absolute left-4 bottom-12
+      hidden justify-between items-center
+      w-72 h-12 px-4
+      bg-Gray rounded-md
+      [&>a>svg]:BtnLink
    }
 
    /* Components */
-   .LogoGroup {
+   .Logo {
       @apply
       flex justify-center
-      md:[&>a]:hidden
-      [&>a]:mr-auto
-      [&>svg]:BtnIcon
-      [&>svg]:hidden md:[&>svg]:block
+      md:[&_a]:hidden
+      [&_a]:mr-auto
+      [&_svg]:BtnIcon
+      [&_svg]:hidden md:[&_svg]:block
    }
-   .BtnGroup {
+   .Box_BtnSection {
       @apply
       flex flex-col gap-y-5
       [&_button]:BtnSection
    }
-   .AdminGroup {
+   .Admin {
       @apply
       flex justify-center gap-2.5
-      [&>div]:AdminDetails
+      [&>div]:Details
    }
 
    /* Actives */
-   .BtnLinkGroup.Active {
+   .Box_BtnLink.Active {
       @apply !flex
    }
    .SideBar.Active {
@@ -138,15 +138,14 @@
       flex justify-center items-center
       w-screen h-screen
       bg-Dark
-      [&>img]:animate-pulse
+      [&_img]:animate-pulse
    }
    .SideBar {
       @apply
       fixed top-0 left-0 z-90
-      hidden md:flex flex-col justify-between gap-y-5 overflow-x-hidden
+      hidden md:flex flex-col justify-between gap-y-5 overflow-hidden
       w-72 md:w-14 h-full p-3 md:px-2
-      bg-DarkGlass
-      backdrop-blur
+      bg-Dark
    }
    .TopBar {
       @apply
@@ -157,17 +156,57 @@
    }
    .MainFrame {
       @apply
-      static md:relative top-0 left-14 z-0
-      overflow-hidden
-      w-full h-[calc(100%_-_6rem)] p-7
-      md:w-[calc(100%_-_3.5rem)] md:h-full
+      relative top-0 md:left-14 z-0
+      w-full md:w-[calc(100%_-_3.5rem)]
+      h-[calc(100%_-_6rem)] md:h-full
    }
    .BottomBar {
       @apply
       fixed bottom-0 left-0 z-80
       flex md:hidden justify-start items-start gap-x-2.5
       w-full h-12 px-4 pt-2
+      bg-Dark
       [&>svg]:BtnIcon
       [&>span]:SectionTitle
+   }
+
+   /* !Section Templates */
+   section.Home {
+      @apply
+      /*hidden*/ flex-col md:flex-row justify-evenly items-center
+      w-full h-full
+      [&_img]:md:ml-5 [&_img]:lg:mr-10
+   }
+   article.Home {
+      @apply
+      flex flex-col items-center md:items-start gap-y-2.5 md:gap-y-5
+      max-w-lg p-7
+      [&_div]:text-center [&_p]:md:text-left
+      [&_div]:hidden [&_div]:md:flex [&_div]:gap-x-12
+      [&_svg]:BtnLink
+      [&_button]:BtnTour
+   }
+
+   section.About {
+      @apply
+      /*hidden*/ flex-col md:flex-row justify-evenly items-center
+      w-full h-full
+      [&_img]:md:ml-5 [&_img]:lg:mr-10
+   }
+   article.About {
+      @apply
+      flex flex-col items-start gap-y-2.5 md:gap-y-5
+      max-w-lg p-7
+   }
+
+   section.Skills {
+      @apply
+      /*hidden*/ flex-col md:flex-row justify-evenly items-center gap-y-5
+      w-full h-min md:h-full pb-12 md:p-0
+   }
+   article.Skills {
+      @apply
+      flex flex-col items-start gap-y-2.5 md:gap-y-5
+      max-w-lg p-7
    }
 }

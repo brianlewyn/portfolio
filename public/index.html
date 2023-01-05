@@ -12,21 +12,21 @@
 <body>
 
    <!-- !Loading -->
-   <!-- <div class="Loading">
+   <div class="Loading">
       <img src="img/loader.svg" alt="loader">
-   </div> -->
+   </div>
 
    <!-- !SideBar -->
    <div class="SideBar">
-      <div class="LogoGroup">
-         <a href="/public/">
-            <img src="img/light:brianlewyn.svg" alt="brianlewyn">
-         </a>
 
+      <div class="Logo">
+         <a href="/public/">
+            <img src="img/brianlewyn.svg" alt="brianlewyn">
+         </a>
          <svg id="HighMenu" class="ix i-menu"></svg>
       </div>
 
-      <div class="BtnGroup">
+      <div class="Box_BtnSection">
          <button class="Active">
             <svg class="ix i-home"></svg>
             <div>Home</div>
@@ -68,80 +68,63 @@
          </button>
       </div>
 
-      <div class="AdminGroup">
-         <img src="img/avatar.svg" alt="avatar">
-
-         <!--  AdminDetails -->
+      <div class="Admin">
+         <img src="img/avatar.svg" alt="profile">
          <div>
             <div>Brayan M. M.</div>
             <div>Backend Developer</div>
          </div>
       </div>
+
    </div>
 
    <!-- !TopBar -->
    <header class="TopBar">
-      <!-- brianlewyn -->
       <a href="/public/">
-         <img src="img/dark:brianlewyn.svg" alt="brianlewyn">
+         <img src="img/brianlewyn.svg" alt="brianlewyn">
       </a>
 
-      <!-- BtnTour -->
       <button>Take a tour</button>
    </header>
 
    <!-- !MainFrame -->
    <main class="MainFrame">
 
-      <!-- Home -->
-      <section class="Active
-      flex-col md:flex-row justify-evenly items-center">
-
-         <article class="
-         flex flex-col items-center md:items-start gap-y-2.5 md:gap-y-5
-         max-w-lg">
+      <section class="Home Active">
+         <article class="Home">
 
             <h1>Hello! I'm Brayan</h1>
-
-            <p class="text-center md:text-left">
-               I am a backend developer who loves designing the logic that makes websites & web apps come to lifes.
+            <p>
+               I am a backend developer who loves designing the logic
+               that makes websites & web apps come to lifes.
             </p>
 
-            <div class="hidden md:flex gap-x-12 [&_svg]:BtnLink">
-               <a href="#">
+            <div>
+               <a href="#" target="_blank">
                   <svg class="ix i-envelope"></svg>
                </a>
-
-               <a href="#">
+               <a href="#" target="_blank">
                   <svg class="ix i-whatsapp"></svg>
                </a>
-
-               <a href="#">
+               <a href="#" target="_blank">
                   <svg class="ix i-telegram"></svg>
                </a>
-
-               <a href="#">
+               <a href="https://www.instagram.com/brianlewyn" target="_blank">
                   <svg class="ix i-instagram"></svg>
                </a>
-
-               <a href="#">
+               <a href="https://github.com/brianlewyn" target="_blank">
                   <svg class="ix i-github"></svg>
                </a>
             </div>
 
-            <button class="BtnTour hidden md:block">Take a tour</button>
-
+            <button class="hidden md:block">Take a tour</button>
          </article>
 
-         <img src="img/home.png" class="md:ml-5 lg:mr-10" alt="home">
+         <img src="img/home.png" alt="home">
       </section>
 
-      <!-- About -->
-      <section class="
-      flex-col md:flex-row justify-evenly items-center">
-         <article class="
-         flex flex-col items-start gap-y-2.5 md:gap-y-5
-         max-w-lg">
+      <section class="About">
+         <article class="About">
             <h2>About me</h2>
             <p>
                My name is Brian, i'm a high school graduate.
@@ -156,20 +139,15 @@
             </p>
          </article>
 
-         <img src="img/about.png" class="md:ml-5 lg:mr-10" alt="about">
+         <img src="img/about.png" alt="about">
       </section>
 
       <!-- Projects -->
-      <section class="bg-sky-400"></section>
+      <section class="bg-sky-400 w-full h-full"></section>
 
       <!-- Skills -->
-      <section class="
-      overflow-hidden
-      flex-col md:flex-row justify-start md:justify-evenly 
-      items-center gap-y-5">
-         <article class="
-         flex flex-col items-start gap-y-2.5 md:gap-y-5
-         max-w-lg">
+      <section class="Skills">
+         <article class="Skills">
             <h2>My skill as Backend</h2>
             <p>
                I am a backend developer who works especially with the GO
@@ -182,35 +160,32 @@
                Besides I work with cloud services like AWS and DigitalOcean.
             </p>
          </article>
-         <img src="img/skills.png" class="" alt="skills">
+
+         <img src="img/skills.png" alt="skills">
       </section>
 
-      <section class="bg-cyan-400"></section>
-      <section class="bg-pink-400"></section>
-      <section class="bg-orange-400"></section>
-      <section class="bg-purple-400"></section>
+      <section class="bg-cyan-400 w-full h-full"></section>
+      <section class="bg-pink-400 w-full h-full"></section>
+      <section class="bg-orange-400 w-full h-full"></section>
+      <section class="bg-purple-400 w-full h-full"></section>
    </main>
 
    <!-- !BottomBar -->
    <footer class="BottomBar">
-      <div class="BtnLinkGroup">
+      <div class="Box_BtnLink">
          <a href="#">
             <svg class="ix i-envelope"></svg>
          </a>
-
          <a href="#">
             <svg class="ix i-whatsapp"></svg>
          </a>
-
          <a href="#">
             <svg class="ix i-telegram"></svg>
          </a>
-
-         <a href="#">
+         <a href="https://www.instagram.com/brianlewyn" target="_blank">
             <svg class="ix i-instagram"></svg>
          </a>
-
-         <a href="#">
+         <a href="https://github.com/brianlewyn" target="_blank">
             <svg class="ix i-github"></svg>
          </a>
       </div>
@@ -220,7 +195,7 @@
       <svg id="LowMenu" class="ix i-menu"></svg>
    </footer>
 
-   <script src="ixn.js"></script>
+   <script src="ix-icon.js"></script>
    <script src="app.js"></script>
 
 </body>

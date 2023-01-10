@@ -21,6 +21,9 @@ module.exports = {
         '90': '90',
         '100': '100',
       },
+      backgroundImage: {
+        'ImgTemplate': "url('img/ImgTemplate.jpg')",
+      }
     },
   },
   plugins: [],

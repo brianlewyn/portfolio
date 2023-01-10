@@ -1,9 +1,9 @@
-setTimeout(function() {
-   const Loading = document.querySelector('.Loading')
-   Loading.classList.add('hidden')
-}, 2000);
+// setTimeout(function() {
+//    const Loading = document.querySelector('.Loading')
+//    Loading.classList.add('hidden')
+// }, 2000);
 
-const BtnArray = Array.from(document.querySelectorAll('.Box_BtnSection button'))
+const BtnArray = Array.from(document.querySelectorAll('.BoxBtnSection button'))
 const SectionArray = Array.from(document.querySelectorAll('main section'))
 const TitleSection = document.getElementById('CurrentTitle')
 
@@ -32,7 +32,7 @@ BtnArray.forEach(btn => {
 
 
 const Atom = document.getElementById('Atom')
-const RowLinks = document.querySelector('.Box_BtnLink')
+const RowLinks = document.querySelector('.BoxLinkSocial')
 Atom.addEventListener('click', () => {
    if (RowLinks.classList.contains('Active')){
       RowLinks.classList.remove('Active')

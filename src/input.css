@@ -26,7 +26,7 @@
    section {
       @apply hidden
    }
-   h1, h2 {
+   h1, h2, h3 {
       @apply font-medium font-Comfortaa
    }
    h1 {
@@ -34,6 +34,9 @@
    }
    h2 {
       @apply text-2xl md:text-3xl
+   }
+   h3 {
+      @apply text-lg md:text-xl
    }
 
    /* Atoms */
@@ -51,17 +54,42 @@
       fill-Gray hover:fill-Teal
       cursor-pointer
    }
-   .BtnLink {
+   .SvgLink {
       @apply
       hover:scale-110
       fill-Dark hover:fill-Dark
       md:fill-Gray md:hover:fill-Teal
+   }
+   .BtnLink {
+      @apply
+      font-Comfortaa text-base
+      px-4 py-1.5 
+      border border-Teal hover:border-Dark rounded
    }
    .SectionTitle {
       @apply
       flex grow
       font-normal font-Comfortaa
       text-Gray
+   }
+   .RowCard {
+      @apply
+      flex flex-col justify-center flex-wrap md:flex-row gap-5 md:gap-12
+      px-5
+   }
+   .Card {
+      @apply
+      flex flex-col justify-center items-center gap-5
+      w-min p-5
+      bg-TealGlass
+      [&_h3]:mr-auto
+      [&_p]:text-justify [&_p]:text-base
+   }
+   .ImgTemplate {
+      @apply
+      flex
+      w-80 lg:w-72 h-60 lg:h-52
+      bg-cover
    }
 
    /* Molecules */
@@ -74,19 +102,28 @@
       fill-Gray hover:fill-Teal
       [&_div]:flex md:[&_div]:hidden [&>_div]:grow
    }
-   .Details {
+   .AdminDetails {
       @apply
       flex md:hidden flex-col grow
       font-medium font-Comfortaa text-Gray
       first:[&_div]:text-lg last:[&_div]:text-sm
    }
-   .Box_BtnLink {
+   .BoxLinkSocial {
       @apply
       absolute left-4 bottom-12
       hidden justify-between items-center
       w-72 h-12 px-4
       bg-Gray rounded-md
-      [&>a>svg]:BtnLink
+      [&>a>svg]:SvgLink
+   }
+   .PairBtnLink {
+      @apply
+      flex justify-evenly
+      w-full
+      [&_a]:BtnLink
+      first:[&_a]:text-Teal first:[&_a]:bg-transparent
+      last:[&_a]:text-Dark last:[&_a]:bg-Teal
+      hover:[&_a]:text-Gray hover:[&_a]:bg-Dark
    }
 
    /* Components */
@@ -98,7 +135,7 @@
       [&_svg]:BtnIcon
       [&_svg]:hidden md:[&_svg]:block
    }
-   .Box_BtnSection {
+   .BoxBtnSection {
       @apply
       flex flex-col gap-y-5
       [&_button]:BtnSection
@@ -106,11 +143,11 @@
    .Admin {
       @apply
       flex justify-center gap-2.5
-      [&>div]:Details
+      [&>div]:AdminDetails
    }
 
    /* Actives */
-   .Box_BtnLink.Active {
+   .BoxLinkSocial.Active {
       @apply !flex
    }
    .SideBar.Active {
@@ -177,13 +214,13 @@
       w-full h-full
       [&_img]:md:ml-5 [&_img]:lg:mr-10
    }
-   article.Home {
+   section.Home article {
       @apply
       flex flex-col items-center md:items-start gap-y-2.5 md:gap-y-5
       max-w-lg p-7
       [&_div]:text-center [&_p]:md:text-left
       [&_div]:hidden [&_div]:md:flex [&_div]:gap-x-12
-      [&_svg]:BtnLink
+      [&_svg]:SvgLink
       [&_button]:BtnTour
    }
 
@@ -193,10 +230,21 @@
       w-full h-full
       [&_img]:md:ml-5 [&_img]:lg:mr-10
    }
-   article.About {
+   section.About article {
       @apply
       flex flex-col items-start gap-y-2.5 md:gap-y-5
       max-w-lg p-7
+   }
+
+   section.Projects {
+      @apply
+      /*hidden*/ justify-center items-center
+      w-full h-min xl:h-full p-8 pb-20 md:pb-8 xl:p-0
+   }
+   section.Projects article {
+      @apply
+      flex flex-col justify-center gap-y-5 md:gap-y-10
+      h-min
    }
 
    section.Skills {
@@ -204,7 +252,7 @@
       /*hidden*/ flex-col md:flex-row justify-evenly items-center gap-y-5
       w-full h-min md:h-full pb-12 md:p-0
    }
-   article.Skills {
+   section.Skills article {
       @apply
       flex flex-col items-start gap-y-2.5 md:gap-y-5
       max-w-lg p-7

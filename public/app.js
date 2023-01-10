@@ -1,7 +1,7 @@
-// setTimeout(function() {
-//    const Loading = document.querySelector('.Loading')
-//    Loading.classList.add('hidden')
-// }, 2000);
+setTimeout(function() {
+   const Loading = document.querySelector('.Loading')
+   Loading.classList.add('hidden')
+}, 2000);
 
 const BtnArray = Array.from(document.querySelectorAll('.BoxBtnSection button'))
 const SectionArray = Array.from(document.querySelectorAll('main section'))

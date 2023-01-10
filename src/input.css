@@ -77,14 +77,6 @@
       flex flex-col justify-center flex-wrap md:flex-row gap-5 md:gap-12
       px-5
    }
-   .Card {
-      @apply
-      flex flex-col justify-center items-center gap-5
-      w-min p-5
-      bg-TealGlass
-      [&_h3]:mr-auto
-      [&_p]:text-justify [&_p]:text-base
-   }
    .ImgTemplate {
       @apply
       flex
@@ -116,6 +108,14 @@
       bg-Gray rounded-md
       [&>a>svg]:SvgLink
    }
+   .Card {
+      @apply
+      flex flex-col justify-center items-center gap-5
+      w-min p-5
+      bg-TealGlass
+      [&_h3]:mr-auto
+      [&_p]:text-justify [&_p]:text-base
+   }
    .PairBtnLink {
       @apply
       flex justify-evenly
@@ -130,6 +130,7 @@
    .Logo {
       @apply
       flex justify-center
+      pt-1 pl-1
       md:[&_a]:hidden
       [&_a]:mr-auto
       [&_svg]:BtnIcon
@@ -143,6 +144,7 @@
    .Admin {
       @apply
       flex justify-center gap-2.5
+      [&_img]:py-1
       [&>div]:AdminDetails
    }
 
@@ -155,6 +157,7 @@
       flex
       md:w-64 md:px-3
       md:[&_a]:inline
+      md:[&_div.BoxBtnSection]:gap-y-4
       md:[&_button]:px-4
       md:[&_button>div]:flex
       md:last:[&>div>div]:flex
@@ -180,7 +183,7 @@
    .SideBar {
       @apply
       fixed top-0 left-0 z-90
-      hidden md:flex flex-col justify-between gap-y-5 overflow-hidden
+      hidden md:flex flex-col justify-between gap-y-5 overflow-x-hidden
       w-72 md:w-14 h-full p-3 md:px-2
       bg-Dark
    }

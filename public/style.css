@@ -515,28 +515,6 @@ h3{
   }
 }
 
-.Card{
-  display: flex;
-  width: -moz-min-content;
-  width: min-content;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  background-color: rgb(var(--Teal) / .20);
-  padding: 1.25rem;
-}
-
-.Card h3{
-  margin-right: auto;
-}
-
-.Card p{
-  text-align: justify;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
 .ImgTemplate{
   display: flex;
   height: 15rem;
@@ -589,6 +567,28 @@ h3{
   }
 }
 
+.Card{
+  display: flex;
+  width: -moz-min-content;
+  width: min-content;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background-color: rgb(var(--Teal) / .20);
+  padding: 1.25rem;
+}
+
+.Card h3{
+  margin-right: auto;
+}
+
+.Card p{
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .PairBtnLink{
   display: flex;
   width: 100%;
@@ -632,6 +632,8 @@ h3{
 .Logo{
   display: flex;
   justify-content: center;
+  padding-top: 0.25rem;
+  padding-left: 0.25rem;
 }
 
 .Logo a{
@@ -717,6 +719,11 @@ h3{
   gap: 0.625rem;
 }
 
+.Admin img{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .Admin>div{
   display: flex;
   flex-grow: 1;
@@ -768,6 +775,10 @@ h3{
     padding-right: 1rem;
   }
 
+  .\!SideBar.Active div.BoxBtnSection{
+    row-gap: 1rem;
+  }
+
   .\!SideBar.Active button>div{
     display: flex;
   }
@@ -795,6 +806,10 @@ h3{
   .SideBar.Active button{
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .SideBar.Active div.BoxBtnSection{
+    row-gap: 1rem;
   }
 
   .SideBar.Active button>div{
@@ -874,7 +889,7 @@ section.Active{
   flex-direction: column;
   justify-content: space-between;
   row-gap: 1.25rem;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: rgb(var(--Dark) / 1);
   padding: 0.75rem;
 }
@@ -899,7 +914,7 @@ section.Active{
   flex-direction: column;
   justify-content: space-between;
   row-gap: 1.25rem;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: rgb(var(--Dark) / 1);
   padding: 0.75rem;
 }
